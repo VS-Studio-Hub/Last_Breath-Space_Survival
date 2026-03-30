@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 6f;
     public float jumpForce = 2f;
 
-    [Header("Alen planet Gravity")]
+    [Header("Alien planet Gravity")]
     public float gravity = -3f;
 
     [Header("Ground Check")]

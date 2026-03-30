@@ -2,24 +2,12 @@ using UnityEngine;
 
 public class MissionManager : MonoBehaviour
 {
-    public static MissionManager instance;
-
     [Header("Mission")]
     public static bool battery;
     public static bool circuit;
     public static bool tool;
+    private bool missionComplete;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     void Start()
     {
         battery = false;
@@ -30,6 +18,10 @@ public class MissionManager : MonoBehaviour
 
     void Update()
     {
-        
+        if(!missionComplete && battery && circuit && tool)
+        {
+            SpaceShip.isActiveSpaceShip = true;
+            //Debug.Log("Mission Complete!");
+        }
     }
 }
